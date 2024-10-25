@@ -41,4 +41,19 @@ class DashboardHomeController extends GetxController {
       'title': Strings.museumNational,
     },
   ];
+
+  var eventItems = [
+    {
+      'image': vanGogh,
+    },
+    {
+      'image': flammer,
+    },
+    {
+      'image': vanGogh,
+    },
+    {
+      'image': flammer,
+    },
+  ];
 }

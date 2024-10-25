@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:jak_one_pay/app/const/assets.dart';
 import 'package:jak_one_pay/presentation/dashboard_home/widget/jak_circular_icon_button.dart';
 import 'package:jak_one_pay/presentation/widget/jak_one_button.dart';
@@ -39,11 +37,10 @@ class DashboardHomePage extends GetView<DashboardHomeController> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ///header.
           Stack(
             children: [
               const SizedBox(
-                height: 300,
+                height: 250,
               ),
               Container(
                 decoration: const BoxDecoration(
@@ -97,7 +94,7 @@ class DashboardHomePage extends GetView<DashboardHomeController> {
                   Padding(
                     padding: const EdgeInsets.only(left: 16),
                     child: SizedBox(
-                      width: 160,
+                      width: 200,
                       child: Row(
                         children: [
                           Image.asset(
@@ -264,6 +261,8 @@ class DashboardHomePage extends GetView<DashboardHomeController> {
           const SizedBox(
             height: 8,
           ),
+
+          ///Place
           Row(
             children: [
               Image.asset(
@@ -393,10 +392,12 @@ class DashboardHomePage extends GetView<DashboardHomeController> {
           const SizedBox(
             height: 24,
           ),
+
+          ///Event
           Row(
             children: [
               Image.asset(
-                sidePlaceIcon,
+                sideEventIcon,
                 height: 40,
               ),
               const SizedBox(
@@ -432,6 +433,78 @@ class DashboardHomePage extends GetView<DashboardHomeController> {
                 ),
               ),
             ],
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 32),
+            child: SizedBox(
+              height: 180,
+              child: Expanded(
+                child: ListView.builder(
+                  itemCount: controller.eventItems.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    final data = controller.eventItems[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 150,
+                        width: 191,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                          gradient: LinearGradient(
+                            colors: [
+                              AppTheme.primaryColor,
+                              AppTheme.primaryColor2,
+                              AppTheme.whiteColor,
+                              AppTheme.whiteColor,
+                            ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  data['image'] ?? '',
+                                  height: 116,
+                                  width: 171,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                              child: JakOneButton(
+                                isGradientOutlinedButton: false,
+                                onPressed: () {},
+                                text: Strings.moreInformation.tr,
+                                fontSize: 10,
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                  vertical: 4,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 24,
           ),
         ],
       ),

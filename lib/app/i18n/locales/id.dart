@@ -15,4 +15,5 @@ Map<String, String> id = {
   Strings.viewAll: 'Lihat Semua',
   Strings.ancolEntranceGate: 'Pintu Masuk Ancol',
   Strings.museumNational: 'Museum Nasional ',
+  Strings.moreInformation: 'Informasi Selengkapnya',
 };

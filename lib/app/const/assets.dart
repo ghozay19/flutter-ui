@@ -12,6 +12,8 @@ const String iniJakartaBanner = 'assets/images/ini_jakarta_banner.png';
 const String didYouKnow = 'assets/images/did_you_know.png';
 const String museumNational = 'assets/images/museum_national.png';
 const String ancol = 'assets/images/ancol.png';
+const String vanGogh = 'assets/images/van_gogh.png';
+const String flammer = 'assets/images/flammer.png';
 
 ///Icons
 const String bubbleHelp = 'assets/images/bubble_help.png';

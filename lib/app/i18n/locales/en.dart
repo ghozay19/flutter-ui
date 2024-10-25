@@ -15,4 +15,5 @@ Map<String, String> en = {
   Strings.viewAll: 'View All',
   Strings.ancolEntranceGate: 'Ancol Entrance Gate',
   Strings.museumNational: 'National Museum',
+  Strings.moreInformation: 'More Information',
 };

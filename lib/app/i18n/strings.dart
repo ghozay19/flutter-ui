@@ -13,4 +13,5 @@ class Strings {
   static const viewAll = 'viewAll';
   static const ancolEntranceGate = 'ancolEntranceGate';
   static const museumNational = 'museumNational';
+  static const moreInformation = 'moreInformation';
 }
