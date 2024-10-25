@@ -17,38 +17,51 @@ class OnboardingPage extends GetView<OnboardingController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const SizedBox(height: 40),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                buildLanguageSwitcher(context),
-                buildJakcardButton(context),
+                const SizedBox(height: 40),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    buildLanguageSwitcher(context),
+                    buildJakcardButton(context),
+                  ],
+                ),
+                const SizedBox(height: 40),
+                buildCarousel(context),
+                JakOneButton(
+                  text: 'Continue as a Guest',
+                  isGradientOutlinedButton: false,
+                  onPressed: () {
+                    Get.toNamed(HomePage.routeName);
+                  },
+                ),
+                const SizedBox(height: 16),
+                JakOneButton(
+                  text: 'Continue as a Guest',
+                  onPressed: () {
+                    Get.toNamed(HomePage.routeName);
+                  },
+                ),
               ],
             ),
-            const SizedBox(height: 40),
-            buildCarousel(context),
-            JakOneButton(
-              text: 'Continue as a Guest',
-              isGradientOutlinedButton: false,
-              onPressed: () {
-                Get.toNamed(HomePage.routeName);
-              },
+          ),
+          Positioned(
+            bottom: 10,
+            right: 10,
+            child: Image.asset(
+              bubbleHelp,
+              width: 90,
+              height: 90,
             ),
-            const SizedBox(height: 16),
-            JakOneButton(
-              text: 'Continue as a Guest',
-              onPressed: () {
-                Get.toNamed(HomePage.routeName);
-              },
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

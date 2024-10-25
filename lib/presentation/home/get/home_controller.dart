@@ -20,11 +20,6 @@ class HomeController extends FullLifeCycleController
     currentIndex.value = index;
   }
 
-  // Handle floating button press
-  void handleFloatingButtonPress() {
-    Get.snackbar('QR Pressed', 'You pressed the QR button');
-  }
-
   late TabController navigationController;
   final List<NavigationBarItem> menus = <NavigationBarItem>[
     NavigationBarItem(icon: homeIcon, text: ''),

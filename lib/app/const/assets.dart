@@ -8,6 +8,10 @@ const String gradientBottomRightTwo =
 const String jakartaTouristPass = 'assets/images/jakarta_tourist_pass.png';
 const String splashColorImage = 'assets/images/splash_image.png';
 const String ojkLpsImage = 'assets/images/ojk_lps_image.png';
+const String iniJakartaBanner = 'assets/images/ini_jakarta_banner.png';
+const String didYouKnow = 'assets/images/did_you_know.png';
+const String museumNational = 'assets/images/museum_national.png';
+const String ancol = 'assets/images/ancol.png';
 
 ///Icons
 const String bubbleHelp = 'assets/images/bubble_help.png';
