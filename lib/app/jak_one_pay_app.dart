@@ -15,7 +15,7 @@ class JakOnePayApp extends StatelessWidget {
       getPages: pageRoutes,
       unknownRoute: Get.currentRoute.isEmpty ? splashPage : null,
       theme: AppTheme.theme(context),
-      locale: TranslationService.locale,
+      locale: TranslationService.getSavedLocale(),
       fallbackLocale: TranslationService.fallbackLocale,
       translations: TranslationService(),
     );
