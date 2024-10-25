@@ -5,12 +5,14 @@ class JakOneButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final bool isGradientOutlinedButton;
+  final double? radiusCircular;
 
   const JakOneButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.isGradientOutlinedButton = true,
+    this.radiusCircular,
   });
 
   @override
@@ -18,12 +20,12 @@ class JakOneButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(radiusCircular ?? 30),
         gradient: isGradientOutlinedButton
             ? const LinearGradient(
                 colors: [
-                  Color(0xFFFFA726),
-                  Color(0xFFFF7043),
+                  AppTheme.primaryColor2,
+                  AppTheme.primaryColor,
                 ],
               )
             : const LinearGradient(colors: [
@@ -36,17 +38,21 @@ class JakOneButton extends StatelessWidget {
           color: isGradientOutlinedButton ? AppTheme.whiteColor : null,
           gradient: isGradientOutlinedButton
               ? null
-              : const LinearGradient(colors: [
-                  Color(0xFFFFA726),
-                  Color(0xFFFF7043),
-                ]),
-          borderRadius: BorderRadius.circular(30),
+              : const LinearGradient(
+                  colors: [
+                    AppTheme.primaryColor,
+                    AppTheme.primaryColor2,
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+          borderRadius: BorderRadius.circular(radiusCircular ?? 30),
         ),
         child: OutlinedButton(
           style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(radiusCircular ?? 30),
             ),
             side: BorderSide.none,
           ),

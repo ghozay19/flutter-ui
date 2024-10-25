@@ -5,6 +5,8 @@ import 'package:jak_one_pay/presentation/home/get/home_controller.dart';
 
 import '../../../app/const/assets.dart';
 import '../../custom_bottom_navigation_bar.dart';
+import '../../dashboard_home/get/dashboard_home_binding.dart';
+import '../../dashboard_home/page/dashboard_home_page.dart';
 
 class HomePage extends GetView<HomeController> {
   static const routeName = '/home';
@@ -14,13 +16,15 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Page')),
       body: TabBarView(
         physics: const NeverScrollableScrollPhysics(),
         controller: controller.navigationController,
-        children: const [
-          DashboardHomePage(),
-          SizedBox(),
+        children: [
+          Builder(builder: (context) {
+            DashboardHomeBinding().dependencies();
+            return const DashboardHomePage();
+          }),
+          const SizedBox(),
         ],
       ),
       bottomNavigationBar: Container(
@@ -108,13 +112,8 @@ class HomePage extends GetView<HomeController> {
       ),
     );
   }
-
-  Widget buildBottomNavigationBar(BuildContext context) {
-    return const SizedBox();
-  }
 }
 
-// Help Bubble UI
 class HelpBubble extends StatelessWidget {
   const HelpBubble({super.key});
 
@@ -122,7 +121,7 @@ class HelpBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.orange, // Bubble color
+        color: Colors.orange,
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
@@ -151,33 +150,6 @@ class HelpBubble extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class DashboardHomePage extends StatelessWidget {
-  const DashboardHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFFDFDFD),
-      body: Stack(
-        children: [
-          Center(
-            child: Text('Dashboard'),
-          ),
-          Positioned(
-            bottom: 20,
-            right: 10,
-            child: Image.asset(
-              bubbleHelp,
-              width: 90,
-              height: 90,
-            ),
-          )
-        ],
       ),
     );
   }

@@ -18,6 +18,14 @@ const String indoIcon = 'assets/icon/indo_icon.png';
 const String creditCardIcon = 'assets/icon/credit_card_icon.png';
 const String homeIcon = 'assets/icon/home.png';
 const String profileIcon = 'assets/icon/profile.png';
+const String sideEventIcon = 'assets/icon/side_event_icon.png';
+const String sidePlaceIcon = 'assets/icon/side_place_icon.png';
+const String exploreJakartaIcon = 'assets/icon/explore_jakarta_icon.png';
+const String topupIcon = 'assets/icon/topup_icon.png';
+const String jakCardBalanceIcon = 'assets/icon/jakcard_balance_icon.png';
+const String eventIcon = 'assets/icon/event_icon.png';
+const String transaction = 'assets/icon/transaction.png';
+const String notification = 'assets/icon/notification.png';
 
 ///OnBoarding
 const String monas = 'assets/images/monas.png';
